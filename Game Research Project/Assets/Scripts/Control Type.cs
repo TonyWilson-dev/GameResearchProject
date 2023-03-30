@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlType 
+public class ControlType
 {
     private bool _active;
+    private Vector3 _destination;
 
-    private bool Get_active()
+    public Vector3 Destination { get => _destination; set => _destination = value; }
+
+    protected bool Get_active()
     {
         return _active;
     }
@@ -17,13 +20,12 @@ public class ControlType
     }
     public virtual void setDestination(Vector3 destination)
     {
-        Debug.Log("Setting destination: " + destination);
-       
+        _destination = destination;
     }
 
     public virtual void setSpeed(float speed)
     {
-        float newSpeed = Mathf.Clamp(speed, 0f, 1f);
+        
     }
 
     public virtual void setTarget(Vector3 target)
@@ -31,6 +33,7 @@ public class ControlType
         Debug.Log("Setting target: " + target);
 
     }
+
 
     public virtual void useAbility()
     {

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class TestRole : RoleType
 {
-   
+    public byte _abilty;
 
     public override void Ability(Vector3 target)
     {
-        Debug.Log("Ability called" + _maxHealth);
+        Debug.Log("Ability called at: " + target + ", ability value: " + _abilty);
     }
 
-    public override void Initialise()
+    public override void Initialise(byte[] genes)
     {
-        _maxHealth = 50f;
-        _maxMoveSpeed = 10f;
-        base.Initialise();
+        _abilty = genes[3];
+        base.Initialise(genes);
     }
 }

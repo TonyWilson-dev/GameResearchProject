@@ -19,7 +19,18 @@ public class AgentController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("updating");
        _control.Update();
+        MoveToPosition(_control.Destination);
     }
+
+    public void MoveToPosition(Vector3 destination)
+    {
+        Vector3 movementVector = destination - gameObject.transform.position;
+        movementVector.y = 0f; 
+        Vector3.Normalize(movementVector);
+        transform.Translate(movementVector * _role.GetCurrentSpeed() * Time.deltaTime);
+    }
+
+
+
 }
