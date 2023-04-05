@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public abstract class RoleType 
+public abstract class RoleType :Component
 {
     protected byte _maxHealth; //change to ushort
     protected byte _maxMoveSpeed;
@@ -16,27 +18,34 @@ public abstract class RoleType
     public abstract void Ability(Vector3 target);
     public virtual void Initialise()
     {
-        if (_maxHealth == 0) { _maxHealth = 50; }
-        if (_maxMoveSpeed == 0) { _maxMoveSpeed = 5; }
-        _currentHealth = _maxHealth;
-        _currentMoveSpeed = _maxMoveSpeed;
+        
     }
 
     public virtual void Initialise(byte[] genes)
     {
-        _maxHealth = genes[0];
-        _maxMoveSpeed = genes[1];
-        _size = genes[2];
+        Stream stream = File.Open("GeneData.dat", FileMode.Open);
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        GeneInfo geneInfo;
 
-        Initialise();
+        geneInfo = (GeneInfo)binaryFormatter.Deserialize(stream);
+
+        Debug.Log(geneInfo._geneID + " serialized");
+        Debug.Log(geneInfo._geneArray[1] + " generray");
+
+        _maxHealth = geneInfo._geneArray[0];
+        _maxMoveSpeed = geneInfo._geneArray[1];
+        _size = geneInfo._geneArray[3];
+
+        if (_maxHealth == 0) { _maxHealth = 1; }
+        if (_maxMoveSpeed == 0) { _maxMoveSpeed = 1; }
+
+        _currentHealth = _maxHealth;
+        _currentMoveSpeed = _maxMoveSpeed;
     }
 
     public float GetCurrentSpeed()
     {
         return _currentMoveSpeed;
-    }
-    public RoleType()
-    {
     }
 
     public RoleType(string bitString)
@@ -50,6 +59,11 @@ public abstract class RoleType
         //convert sections of text into binary data
 
         //use data to set up member variables
+    }
+
+    public RoleType()
+    {
+        
     }
 
     public void TakeDamage(byte damage)

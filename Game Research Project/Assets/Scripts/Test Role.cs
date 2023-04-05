@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class TestRole : RoleType
 {
+    
     public byte _abilty;
 
     public override void Ability(Vector3 target)
