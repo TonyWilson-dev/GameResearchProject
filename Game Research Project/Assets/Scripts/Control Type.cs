@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ControlType
 {
+    protected string _agentID;
     private bool _active;
     private Vector3 _destination;
-
+    protected Vector3 _target;
+    public bool _useAbility;
     public Vector3 Destination { get => _destination; set => _destination = value; }
 
     protected bool Get_active()
@@ -14,12 +16,34 @@ public class ControlType
         return _active;
     }
 
-    private void Set_active(bool value)
+    protected void Set_active(bool value)
     {
         _active = value;
     }
+
+    public virtual void Update()
+    { }
+
+
     public virtual void setDestination(Vector3 destination)
     {
+        if (destination.x >= 15f )
+        {
+            destination.x = 15f;
+        }
+        if (destination.x <= -15f)
+        {               
+            destination.x = -15f;
+        }
+        if (destination.z >= 15f)
+        {
+            destination.z = 15f;
+        }
+        if (destination.z <= -15f)
+        {               
+            destination.z = -15f;
+        }
+
         _destination = destination;
     }
 
@@ -29,19 +53,17 @@ public class ControlType
     }
 
     public virtual void setTarget(Vector3 target)
-    {
-        Debug.Log("Setting target: " + target);
-
+    {      
+        _target = target; 
     }
 
+    public virtual void Initialise(string AgentID)
+    {
+        _agentID = AgentID;      
+    }
 
     public virtual void useAbility()
     {
-        Debug.Log("using ability");
-    }
-
-    public virtual void Initialise()
-    {
-        Set_active(true);
+        _useAbility = true;
     }
 }

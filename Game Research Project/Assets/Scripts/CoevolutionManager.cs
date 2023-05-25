@@ -4,51 +4,65 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class CoevolutionManager : MonoBehaviour
+public class CoevolutionManager
 {
+    private bool _active;
+    public float _learningRate;
+    public string _geneID;
+    [SerializeField]
+    public PopulationPool _populationPool;
 
-    private byte[] _testGeneArray = new byte[6] { 1, 2, 3, 4, 5, 6 };
-    
-    
-    
-
-    private GeneInfo _testGeneInfo = new GeneInfo(new byte[] {1,2,3,4,5,6}, "testGeneID"); 
-
-    public GameObject _agentPrefab;
-
-    public void Start()
+    public void WriteAgentData()
     {
-        Instantiate(_agentPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        TestRole agent = _agentPrefab.GetComponent<TestRole>();
-
-        Stream stream = File.Open("GeneData.dat", FileMode.Create);
-
+        Stream stream = File.Open(_geneID + ".dat", FileMode.Create);
         BinaryFormatter binary = new BinaryFormatter();
-
-        binary.Serialize(stream, _testGeneInfo);
-
+        binary.Serialize(stream, _populationPool._geneInfo);
         stream.Dispose();
-        
-        agent.Initialise(_testGeneArray);
+
+        Debug.Log("writing data:" + _populationPool._geneInfo._geneArray);
 
     }
 
-    public void setGenesRandom(GeneInfo geneInfo)
+    public GeneInfo ReadAgentData()
     {
-        for (int i = 0; i < geneInfo._geneArray.Length; i++)
+        Stream stream = File.Open(_geneID + ".dat", FileMode.Open);
+        BinaryFormatter binary = new BinaryFormatter();
+        GeneInfo geneInfo = (GeneInfo)binary.Deserialize(stream);
+        stream.Dispose();
+        return geneInfo;
+    }
+
+    private bool CheckAgentData()
+    {
+ 
+        return File.Exists(_geneID + ".dat");    
+    }
+
+    public void Update()
+    {
+        if (_active && _populationPool._geneInfo._dataChangeFlag)
         {
-            geneInfo._geneArray[i] = (byte)Random.Range(1,10);
+            WriteAgentData();
+            _populationPool._geneInfo._dataChangeFlag = false;
         }
     }
 
-    public void mutateGene(GeneInfo geneInfo)
+    public void Initialise(GameObject agentPrefab, string geneID, float learningRate, float mutationSensitivity)
     {
-        for (int i = 0; i < geneInfo._geneArray.Length; i++)
+        _active = true;
+        _geneID = geneID;
+        _learningRate = learningRate;
+
+        if (CheckAgentData() == false)
         {
-            int geneValue = (int)geneInfo._geneArray[i];
-            geneValue = (int)(geneValue + geneValue * 0.1);
-            geneInfo._geneArray[i] = (byte)geneValue;
+            
+            _populationPool = new PopulationPool(geneID);
+            _populationPool.Randomise();
+            WriteAgentData();
+        }
+        else
+        {
+            _populationPool = new PopulationPool(ReadAgentData(),mutationSensitivity, learningRate, _geneID);
         }
     }
-    
 }

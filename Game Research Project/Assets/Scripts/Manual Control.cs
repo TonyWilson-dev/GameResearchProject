@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ManualControl : ControlType, AIInterface
 {
+    [SerializeField]
     private bool _selected;
 
     private bool Get_selected()
@@ -31,13 +32,13 @@ public class ManualControl : ControlType, AIInterface
         base.setTarget(target);
     }
 
-    public override void Initialise()
+    public override void Initialise(string AgentID)
     {
-        base.Initialise();
+        base.Initialise(AgentID);
         _selected = false;
     }
 
-    public void Update()
+    public override void Update()
     {
         if (_selected && base.Get_active())
         {

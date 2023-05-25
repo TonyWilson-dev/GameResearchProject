@@ -1,0 +1,133 @@
+Starting simulation data recording:
+AgentID0, Match Number: 1, Result: Draw, Winrate: 0%, Genes:1626
+
+AgentID1, Match Number: 1, Result: Draw, Winrate: 0%, Genes:1725
+
+AgentID0, Match Number: 2, Result: Draw, Winrate: 0%, Genes:1626
+
+AgentID1, Match Number: 2, Result: Draw, Winrate: 0%, Genes:1725
+
+AgentID0, Match Number: 3, Result: Loss, Winrate: 0%, Genes:1726
+
+AgentID1, Match Number: 3, Result: Win, Winrate: 33.33333%, Genes:1715
+
+AgentID0, Match Number: 4, Result: Loss, Winrate: 0%, Genes:1826
+
+AgentID1, Match Number: 4, Result: Win, Winrate: 50%, Genes:1715
+
+AgentID0, Match Number: 5, Result: Draw, Winrate: 0%, Genes:1826
+
+AgentID1, Match Number: 5, Result: Draw, Winrate: 40%, Genes:1715
+
+AgentID0, Match Number: 6, Result: Win, Winrate: 16.66667%, Genes:1836
+
+AgentID1, Match Number: 6, Result: Loss, Winrate: 33.33333%, Genes:1115
+
+AgentID0, Match Number: 7, Result: Loss, Winrate: 14.28571%, Genes:1837
+
+AgentID1, Match Number: 7, Result: Win, Winrate: 42.85714%, Genes:1115
+
+AgentID0, Match Number: 8, Result: Win, Winrate: 25%, Genes:1847
+
+AgentID1, Match Number: 8, Result: Loss, Winrate: 37.5%, Genes:1111
+
+AgentID0, Match Number: 9, Result: Loss, Winrate: 22.22222%, Genes:2847
+
+AgentID1, Match Number: 9, Result: Win, Winrate: 44.44444%, Genes:1111
+
+AgentID0, Match Number: 10, Result: Win, Winrate: 30%, Genes:3847
+
+AgentID1, Match Number: 10, Result: Loss, Winrate: 40%, Genes:1111
+
+AgentID0, Match Number: 11, Result: Draw, Winrate: 27.27273%, Genes:3847
+
+AgentID1, Match Number: 11, Result: Draw, Winrate: 36.36364%, Genes:1111
+
+AgentID0, Match Number: 12, Result: Draw, Winrate: 25%, Genes:3847
+
+AgentID1, Match Number: 12, Result: Draw, Winrate: 33.33333%, Genes:1111
+
+AgentID0, Match Number: 13, Result: Win, Winrate: 30.76923%, Genes:3847
+
+AgentID1, Match Number: 13, Result: Loss, Winrate: 30.76923%, Genes:1111
+
+AgentID0, Match Number: 14, Result: Win, Winrate: 35.71429%, Genes:3817
+
+AgentID1, Match Number: 14, Result: Loss, Winrate: 28.57143%, Genes:1112
+
+AgentID0, Match Number: 15, Result: Draw, Winrate: 33.33333%, Genes:3817
+
+AgentID1, Match Number: 15, Result: Draw, Winrate: 26.66667%, Genes:1112
+
+AgentID0, Match Number: 16, Result: Draw, Winrate: 31.25%, Genes:3817
+
+AgentID1, Match Number: 16, Result: Draw, Winrate: 25%, Genes:1112
+
+AgentID0, Match Number: 17, Result: Draw, Winrate: 29.41176%, Genes:3817
+
+AgentID1, Match Number: 17, Result: Draw, Winrate: 23.52941%, Genes:1112
+
+AgentID0, Match Number: 18, Result: Draw, Winrate: 27.77778%, Genes:3817
+
+AgentID1, Match Number: 18, Result: Draw, Winrate: 22.22222%, Genes:1112
+
+AgentID0, Match Number: 19, Result: Draw, Winrate: 26.31579%, Genes:3817
+
+AgentID1, Match Number: 19, Result: Draw, Winrate: 21.05263%, Genes:1112
+
+AgentID0, Match Number: 20, Result: Loss, Winrate: 25%, Genes:3817
+
+AgentID1, Match Number: 20, Result: Win, Winrate: 25%, Genes:1112
+
+AgentID0, Match Number: 21, Result: Loss, Winrate: 23.80952%, Genes:3827
+
+AgentID1, Match Number: 21, Result: Win, Winrate: 28.57143%, Genes:1112
+
+AgentID0, Match Number: 22, Result: Win, Winrate: 27.27273%, Genes:3827
+
+AgentID1, Match Number: 22, Result: Loss, Winrate: 27.27273%, Genes:1112
+
+AgentID0, Match Number: 23, Result: Draw, Winrate: 26.08696%, Genes:3827
+
+AgentID1, Match Number: 23, Result: Draw, Winrate: 26.08696%, Genes:1112
+
+AgentID0, Match Number: 24, Result: Draw, Winrate: 25%, Genes:3827
+
+AgentID1, Match Number: 24, Result: Draw, Winrate: 25%, Genes:1112
+
+AgentID0, Match Number: 25, Result: Loss, Winrate: 24%, Genes:4827
+
+AgentID1, Match Number: 25, Result: Win, Winrate: 28%, Genes:1112
+
+AgentID0, Match Number: 26, Result: Draw, Winrate: 23.07692%, Genes:4827
+
+AgentID1, Match Number: 26, Result: Draw, Winrate: 26.92308%, Genes:1112
+
+AgentID0, Match Number: 27, Result: Draw, Winrate: 22.22222%, Genes:4827
+
+AgentID1, Match Number: 27, Result: Draw, Winrate: 25.92593%, Genes:1112
+
+AgentID0, Match Number: 28, Result: Loss, Winrate: 21.42857%, Genes:4828
+
+AgentID1, Match Number: 28, Result: Win, Winrate: 28.57143%, Genes:1112
+
+AgentID0, Match Number: 29, Result: Draw, Winrate: 20.68966%, Genes:4828
+
+AgentID1, Match Number: 29, Result: Draw, Winrate: 27.58621%, Genes:1112
+
+AgentID0, Match Number: 30, Result: Draw, Winrate: 20%, Genes:4828
+
+AgentID1, Match Number: 30, Result: Draw, Winrate: 26.66667%, Genes:1112
+
+AgentID0, Match Number: 31, Result: Loss, Winrate: 19.35484%, Genes:4928
+
+AgentID1, Match Number: 31, Result: Win, Winrate: 29.03226%, Genes:1112
+
+AgentID0, Match Number: 32, Result: Draw, Winrate: 18.75%, Genes:4928
+
+AgentID1, Match Number: 32, Result: Draw, Winrate: 28.125%, Genes:1112
+
+AgentID0, Match Number: 33, Result: Draw, Winrate: 18.18182%, Genes:4928
+
+AgentID1, Match Number: 33, Result: Draw, Winrate: 27.27273%, Genes:1112
+
